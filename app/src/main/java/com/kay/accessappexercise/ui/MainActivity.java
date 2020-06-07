@@ -1,8 +1,10 @@
-package com.kay.accessappexercise;
+package com.kay.accessappexercise.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.kay.accessappexercise.R;
 
 public class MainActivity extends AppCompatActivity {
 
