@@ -3,6 +3,7 @@ package com.kay.accessappexercise.ui.base;
 import androidx.databinding.ObservableBoolean;
 import androidx.lifecycle.ViewModel;
 
+import com.kay.accessappexercise.data.DataManager;
 import com.kay.accessappexercise.utils.rx.SchedulerProvider;
 
 import java.lang.ref.WeakReference;
@@ -10,6 +11,8 @@ import java.lang.ref.WeakReference;
 import io.reactivex.disposables.CompositeDisposable;
 
 public abstract class BaseViewModel<N> extends ViewModel {
+
+    private final DataManager mDataManager;
 
     private final ObservableBoolean mIsLoading = new ObservableBoolean();
 
@@ -19,7 +22,8 @@ public abstract class BaseViewModel<N> extends ViewModel {
 
     private WeakReference<N> mNavigator;
 
-    public BaseViewModel(SchedulerProvider schedulerProvider) {
+    public BaseViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
+        this.mDataManager = dataManager;
         this.mSchedulerProvider = schedulerProvider;
         this.mCompositeDisposable = new CompositeDisposable();
     }
@@ -32,6 +36,10 @@ public abstract class BaseViewModel<N> extends ViewModel {
 
     public CompositeDisposable getCompositeDisposable() {
         return mCompositeDisposable;
+    }
+
+    public DataManager getDataManager() {
+        return mDataManager;
     }
 
     public ObservableBoolean getIsLoading() {
