@@ -14,6 +14,7 @@
             android:gravity="center"
             android:lineSpacingMultiplier="1.2"
             android:text="@string/network_error_message"
+            android:textColor="@android:color/darker_gray"
             android:textSize="16sp" />
 
         <Space
@@ -25,7 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="46dp"
-            android:text="@string/retry" />
+            android:text="@string/retry"
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
 </layout>
