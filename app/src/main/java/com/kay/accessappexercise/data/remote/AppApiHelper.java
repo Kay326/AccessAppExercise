@@ -20,7 +20,7 @@ public class AppApiHelper implements ApiHelper {
     @Override
     public Single<List<UserResponse>> getUserListApiCall(UserRequest request) {
         return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_USER_LIST)
-                .addPathParameter(request)
+                .addQueryParameter(request)
                 .build()
                 .getObjectListSingle(UserResponse.class);
     }
