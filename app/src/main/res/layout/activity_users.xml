@@ -24,6 +24,17 @@
             app:adapter="@{viewModel.userListLiveData}"
             tools:listitem="@layout/item_user" />
 
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/clProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <include
             android:id="@+id/contentRetry"
             layout="@layout/content_retry"
