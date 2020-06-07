@@ -15,7 +15,7 @@ import androidx.databinding.ViewDataBinding;
 import dagger.android.AndroidInjection;
 
 public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel> extends AppCompatActivity {
-    
+
     private T mViewDataBinding;
     private V mViewModel;
 
