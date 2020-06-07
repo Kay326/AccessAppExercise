@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AccessAppExercise</string>
+
+    <string name="retry">Retry</string>
+
+    <string name="network_error_message">Network connection error.
+        \n
+        Please check for the Network connection,
+        \n
+        and try again.</string>
 </resources>
