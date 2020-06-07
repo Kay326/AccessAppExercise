@@ -14,11 +14,11 @@ import java.util.List;
 
 public class UsersViewModel extends BaseViewModel<UsersNavigator> {
 
-    private final MutableLiveData<List<UserResponse>> userListLiveData;
+    private final MutableLiveData<List<UserResponse>> mUserListLiveData;
 
     public UsersViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
         super(dataManager, schedulerProvider);
-        userListLiveData = new MutableLiveData<>();
+        mUserListLiveData = new MutableLiveData<>();
         fetchUsers();
     }
 
@@ -30,7 +30,7 @@ public class UsersViewModel extends BaseViewModel<UsersNavigator> {
                 .observeOn(getSchedulerProvider().ui())
                 .subscribe(userResponse -> {
                     if (userResponse != null) {
-                        userListLiveData.setValue(userResponse);
+                        mUserListLiveData.setValue(userResponse);
                     }
                     setIsLoading(false);
                 }, throwable -> {
@@ -39,6 +39,6 @@ public class UsersViewModel extends BaseViewModel<UsersNavigator> {
     }
 
     public LiveData<List<UserResponse>> getUserListLiveData() {
-        return userListLiveData;
+        return mUserListLiveData;
     }
 }

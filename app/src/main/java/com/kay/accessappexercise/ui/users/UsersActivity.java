@@ -22,7 +22,7 @@ public class UsersActivity extends BaseActivity<ActivityUsersBinding, UsersViewM
     @Inject
     UsersAdapter mUsersAdapter;
     @Inject
-    ViewModelProviderFactory factory;
+    ViewModelProviderFactory mFactory;
     @Inject
     LinearLayoutManager mLayoutManager;
     private UsersViewModel mUsersViewModel;
@@ -40,7 +40,7 @@ public class UsersActivity extends BaseActivity<ActivityUsersBinding, UsersViewM
 
     @Override
     public UsersViewModel getViewModel() {
-        mUsersViewModel = ViewModelProviders.of(this,factory).get(UsersViewModel.class);
+        mUsersViewModel = ViewModelProviders.of(this, mFactory).get(UsersViewModel.class);
         return mUsersViewModel;
     }
 
