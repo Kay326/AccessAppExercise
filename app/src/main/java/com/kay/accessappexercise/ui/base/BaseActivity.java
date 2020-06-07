@@ -48,6 +48,10 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
         performDependencyInjection();
         super.onCreate(savedInstanceState);
         performDataBinding();
+
+        mViewDataBinding.setVariable(getBindingVariable(), mViewModel);
+        mViewDataBinding.setLifecycleOwner(this);
+        mViewDataBinding.executePendingBindings();
     }
 
     public T getViewDataBinding() {
